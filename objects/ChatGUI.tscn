@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://themes/chatUIText.tres" type="Theme" id=1]
+[ext_resource path="res://assets/arrow.png" type="Texture" id=2]
+[ext_resource path="res://scripts/chatcontrol.gd" type="Script" id=3]
+[ext_resource path="res://scripts/closechat.gd" type="Script" id=4]
+[ext_resource path="res://scripts/autoscroll.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="Theme" id=6]
+VScrollBar/styles/grabber = SubResource( 1 )
+VScrollBar/styles/grabber_highlight = SubResource( 2 )
+VScrollBar/styles/grabber_pressed = SubResource( 3 )
+VScrollBar/styles/scroll = SubResource( 4 )
+VScrollBar/styles/scroll_focus = SubResource( 5 )
+
+[node name="ChatGUI" type="Control"]
+margin_left = 308.0
+margin_top = 110.0
+margin_right = 578.0
+margin_bottom = 514.0
+script = ExtResource( 3 )
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 34.0
+margin_bottom = -45.0
+theme = SubResource( 6 )
+scroll_horizontal_enabled = false
+script = ExtResource( 5 )
+
+[node name="ChatBox" type="Control" parent="Scroll"]
+show_behind_parent = true
+margin_right = 268.0
+margin_bottom = 325.0
+rect_min_size = Vector2( 268, 325 )
+
+[node name="TopBarBG" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_bottom = 34.0
+color = Color( 0.329412, 0.305882, 0.407843, 1 )
+
+[node name="BackArrow" type="TextureRect" parent="TopBarBG"]
+margin_left = 8.0
+margin_top = 5.0
+margin_right = 46.0
+margin_bottom = 28.0
+mouse_default_cursor_shape = 2
+texture = ExtResource( 2 )
+expand = true
+script = ExtResource( 4 )
+
+[node name="Name" type="Label" parent="TopBarBG"]
+margin_left = 52.0
+margin_top = 3.0
+margin_right = 265.0
+margin_bottom = 34.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.92549, 0.839216, 1 )
+text = "Name"
+align = 2
+valign = 2
+
+[node name="BottomBarBG" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -47.0
+color = Color( 0.329412, 0.305882, 0.407843, 1 )
+
+[node name="Response" type="Label" parent="BottomBarBG"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -47.0
+mouse_filter = 0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.92549, 0.839216, 1 )
+align = 1
+valign = 1

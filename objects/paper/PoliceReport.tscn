@@ -1,0 +1,161 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/paperdrag.gd" type="Script" id=1]
+[ext_resource path="res://themes/s10.tres" type="Theme" id=2]
+[ext_resource path="res://themes/s20.tres" type="Theme" id=3]
+[ext_resource path="res://assets/police_stamp.png" type="Texture" id=4]
+[ext_resource path="res://scripts/phonenumberunlock.gd" type="Script" id=5]
+
+[node name="AutopsyReport" type="ColorRect"]
+margin_right = 262.0
+margin_bottom = 572.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -76.0
+margin_right = -27.0
+margin_bottom = -3.0
+rect_rotation = -19.8
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 4.0
+margin_top = -3.0
+margin_right = 204.0
+margin_bottom = 42.0
+rect_pivot_offset = Vector2( 46, 22 )
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "NIPD REPORT"
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 4.0
+margin_top = 38.0
+margin_right = 252.0
+margin_bottom = 275.0
+rect_pivot_offset = Vector2( 46, 22 )
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Crime commited: 1st degree
+premeditated murder
+
+Description:
+The victim, Sara
+Christianson, was found
+dead in her bedroom with a
+golden trophy lying right 
+next to her, said trophy 
+was covered in blood and 
+was most likely the object
+used to commit the crime."
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 3.0
+margin_top = 479.0
+margin_right = 251.0
+margin_bottom = 496.0
+rect_pivot_offset = Vector2( 46, 22 )
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Family of the victim:"
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 552.0
+margin_right = 250.0
+margin_bottom = 569.0
+rect_pivot_offset = Vector2( 46, 22 )
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "No children."
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 79.0
+margin_top = 330.0
+margin_right = 245.0
+margin_bottom = 347.0
+rect_pivot_offset = Vector2( 46, 22 )
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "According to Ben,"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 3.0
+margin_top = 348.0
+margin_right = 169.0
+margin_bottom = 365.0
+rect_pivot_offset = Vector2( 46, 22 )
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "he was delivering a package
+to Ms. Christianson that day
+and when he saw that the
+front entrance wasn't locked,
+he entered the house only to
+discover the dead body."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 2.0
+margin_top = 276.0
+margin_right = 251.0
+margin_bottom = 346.0
+theme = ExtResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]The incident was reported
+by someone named Ben Willson, who remains the main suspect.[/u]"
+text = "The incident was reported
+by someone named Ben Willson, who remains the main suspect."
+scroll_active = false
+script = ExtResource( 5 )
+contact = "Ben Willson"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 1.0
+margin_top = 498.0
+margin_right = 250.0
+margin_bottom = 513.0
+theme = ExtResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]Adam Christianson - husband[/u]"
+text = "Adam Christianson - husband"
+scroll_active = false
+script = ExtResource( 5 )
+contact = "Adam Christianson"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 2.0
+margin_top = 517.0
+margin_right = 251.0
+margin_bottom = 532.0
+theme = ExtResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]Lara Thompson - sister[/u]"
+text = "Lara Thompson - sister"
+scroll_active = false
+script = ExtResource( 5 )
+contact = "Lara Thompson"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+margin_left = 2.0
+margin_top = 535.0
+margin_right = 251.0
+margin_bottom = 553.0
+theme = ExtResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]Daniel Thompson - brother[/u]"
+text = "Daniel Thompson - brother"
+scroll_active = false
+script = ExtResource( 5 )
+contact = "Daniel Thompson"

@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://themes/s50.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/loadmainscene.gd" type="Script" id=2]
+[ext_resource path="res://themes/s15.tres" type="Theme" id=3]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 0.666667, 0.368627, 1 )
+
+[node name="Name" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -237.0
+margin_top = -400.0
+margin_right = 237.0
+margin_bottom = -264.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.92549, 0.839216, 1 )
+text = "Paperwork"
+
+[node name="Name2" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -363.0
+margin_top = -31.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.92549, 0.839216, 1 )
+text = "Made by G_cat in 3-(ish) days"
+
+[node name="Quit" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -210.0
+margin_top = 9.0
+margin_right = 220.0
+margin_bottom = 144.0
+theme = ExtResource( 1 )
+custom_colors/font_color_pressed = Color( 0.666667, 0.666667, 0.666667, 1 )
+text = "Quit"
+flat = true
+
+[node name="Start" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -213.0
+margin_top = -146.0
+margin_right = 217.0
+margin_bottom = -11.0
+theme = ExtResource( 1 )
+custom_colors/font_color_pressed = Color( 0.666667, 0.666667, 0.666667, 1 )
+text = "Start"
+flat = true
+script = ExtResource( 2 )
+
+[connection signal="pressed" from="Quit" to="Start" method="_on_Quit_pressed"]
+[connection signal="pressed" from="Start" to="Start" method="_on_Press"]

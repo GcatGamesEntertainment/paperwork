@@ -1,0 +1,243 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/table.png" type="Texture" id=1]
+[ext_resource path="res://assets/phone.png" type="Texture" id=2]
+[ext_resource path="res://scripts/phonefocus.gd" type="Script" id=3]
+[ext_resource path="res://assets/window/frame.png" type="Texture" id=4]
+[ext_resource path="res://assets/window/bg.png" type="Texture" id=5]
+[ext_resource path="res://assets/window/ground.png" type="Texture" id=6]
+[ext_resource path="res://scripts/daylightcycle.gd" type="Script" id=7]
+[ext_resource path="res://scripts/contactmanager.gd" type="Script" id=8]
+[ext_resource path="res://scripts/mainmanager.gd" type="Script" id=9]
+[ext_resource path="res://scripts/chatcreator.gd" type="Script" id=10]
+[ext_resource path="res://themes/invisScroll.tres" type="Theme" id=11]
+[ext_resource path="res://scripts/print.gd" type="Script" id=12]
+[ext_resource path="res://assets/printer/bottom.png" type="Texture" id=13]
+[ext_resource path="res://assets/printer/top.png" type="Texture" id=14]
+[ext_resource path="res://assets/message_warning.png" type="Texture" id=15]
+[ext_resource path="res://objects/MouseTooltip.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scripts/sharecontacts.gd" type="Script" id=17]
+[ext_resource path="res://assets/arrow.png" type="Texture" id=18]
+[ext_resource path="res://scripts/quittomainmenu.gd" type="Script" id=19]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.994413 )
+colors = PoolColorArray( 0, 0, 0, 0.588235, 0, 0, 0, 0.00392157 )
+
+[sub_resource type="GradientTexture2D" id=2]
+gradient = SubResource( 1 )
+fill_to = Vector2( 0, 1 )
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+
+[node name="Wallpaper" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.815686, 0.505882, 0.34902, 1 )
+
+[node name="Window" type="Control" parent="Wallpaper"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -319.5
+margin_right = 319.5
+margin_bottom = 376.0
+
+[node name="Sun" type="ColorRect" parent="Wallpaper/Window"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -143.0
+margin_top = 250.0
+margin_right = -68.0
+margin_bottom = 327.0
+color = Color( 1, 0.92549, 0.839216, 1 )
+script = ExtResource( 7 )
+
+[node name="WindowGround" type="TextureRect" parent="Wallpaper/Window"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 36.0
+margin_top = -103.0
+margin_right = -33.0
+margin_bottom = -38.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="WindowFrame" type="TextureRect" parent="Wallpaper/Window"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -319.5
+margin_right = 319.5
+margin_bottom = 376.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="WindowBG" type="TextureRect" parent="Wallpaper/Window"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 37.0
+margin_top = 39.0
+margin_right = -38.0
+margin_bottom = -102.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="PrinterBottom" type="TextureRect" parent="."]
+margin_left = 1.0
+margin_top = 391.0
+margin_right = 300.0
+margin_bottom = 489.0
+texture = ExtResource( 13 )
+expand = true
+script = ExtResource( 12 )
+
+[node name="Gradient" type="TextureRect" parent="."]
+margin_left = 20.0
+margin_top = 392.0
+margin_right = 281.0
+margin_bottom = 488.0
+texture = SubResource( 2 )
+expand = true
+
+[node name="Table" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 488.0
+margin_right = -1.0
+margin_bottom = 38.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="WallpaperOverlay" type="ColorRect" parent="."]
+margin_right = 305.0
+margin_bottom = 351.0
+color = Color( 0.815686, 0.505882, 0.34902, 1 )
+
+[node name="PrinterTop" type="TextureRect" parent="."]
+margin_left = 1.0
+margin_top = 197.0
+margin_right = 300.0
+margin_bottom = 392.0
+texture = ExtResource( 14 )
+expand = true
+
+[node name="Phone" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -415.0
+margin_top = -96.0
+margin_right = -69.0
+margin_bottom = 492.0
+script = ExtResource( 10 )
+
+[node name="PhoneBG" type="ColorRect" parent="Phone"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+
+[node name="PhoneBorder" type="TextureRect" parent="Phone"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="MouseArea" type="Control" parent="Phone"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+script = ExtResource( 3 )
+
+[node name="ContactGUI" type="Control" parent="Phone/MouseArea"]
+margin_left = 38.0
+margin_top = 110.0
+margin_right = 308.0
+margin_bottom = 514.0
+script = ExtResource( 8 )
+
+[node name="TopBarBG" type="ColorRect" parent="Phone/MouseArea/ContactGUI"]
+anchor_right = 1.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( -126, 58 )
+color = Color( 0.329412, 0.305882, 0.407843, 1 )
+
+[node name="Scroll" type="ScrollContainer" parent="Phone/MouseArea/ContactGUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 34.0
+theme = ExtResource( 11 )
+scroll_horizontal_enabled = false
+
+[node name="ContactList" type="Control" parent="Phone/MouseArea/ContactGUI/Scroll"]
+
+[node name="ContactShareGUI" type="Control" parent="Phone/MouseArea"]
+margin_left = 38.0
+margin_top = 514.0
+margin_right = 308.0
+margin_bottom = 918.0
+script = ExtResource( 17 )
+
+[node name="TopBarBG" type="ColorRect" parent="Phone/MouseArea/ContactShareGUI"]
+anchor_right = 1.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( -126, 58 )
+color = Color( 0.329412, 0.305882, 0.407843, 1 )
+
+[node name="Scroll" type="ScrollContainer" parent="Phone/MouseArea/ContactShareGUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 34.0
+theme = ExtResource( 11 )
+scroll_horizontal_enabled = false
+
+[node name="ContactList" type="Control" parent="Phone/MouseArea/ContactShareGUI/Scroll"]
+
+[node name="PhoneBG" type="ColorRect" parent="Phone/MouseArea/ContactShareGUI"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="BackArrow" type="TextureRect" parent="Phone/MouseArea/ContactShareGUI"]
+margin_left = 8.0
+margin_top = 5.0
+margin_right = 46.0
+margin_bottom = 28.0
+mouse_default_cursor_shape = 2
+texture = ExtResource( 18 )
+expand = true
+
+[node name="Ping" type="TextureRect" parent="Phone"]
+visible = false
+margin_left = -39.0
+margin_top = -39.0
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 15 )
+expand = true
+
+[node name="Tooltip" parent="." instance=ExtResource( 16 )]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_bottom = 0.0
+margin_left = -314.0
+margin_top = 430.0
+margin_right = -13.0
+margin_bottom = 479.0
+
+[node name="MainMenuButton" type="TextureRect" parent="."]
+margin_left = 12.0
+margin_top = 10.0
+margin_right = 68.0
+margin_bottom = 50.0
+mouse_default_cursor_shape = 2
+texture = ExtResource( 18 )
+expand = true
+script = ExtResource( 19 )

@@ -1,0 +1,130 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://themes/s10.tres" type="Theme" id=1]
+[ext_resource path="res://themes/s5.tres" type="Theme" id=2]
+[ext_resource path="res://scripts/knowledgeunlock.gd" type="Script" id=3]
+[ext_resource path="res://scripts/paperdrag.gd" type="Script" id=4]
+
+[node name="SecurityLog" type="ColorRect"]
+margin_right = 256.0
+margin_bottom = 414.0
+color = Color( 0.996078, 0.745098, 1, 1 )
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 6.0
+margin_right = 256.0
+margin_bottom = 23.0
+theme = ExtResource( 1 )
+text = "EyeSystems™ Security Log"
+align = 1
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 29.0
+margin_right = 256.0
+margin_bottom = 40.0
+theme = ExtResource( 2 )
+text = "For privacy reasons, only the messages from the last
+72 hours are shown"
+align = 1
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 41.0
+margin_right = 256.0
+margin_bottom = 58.0
+theme = ExtResource( 1 )
+text = "Device: Door lock"
+align = 1
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 224.0
+margin_right = 256.0
+margin_bottom = 241.0
+theme = ExtResource( 1 )
+text = "18/10/2022"
+align = 1
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 250.0
+margin_right = 257.0
+margin_bottom = 407.0
+theme = ExtResource( 1 )
+text = "7:52 - Door unlocked from
+inside
+8:48 - Door unlocked from
+inside
+20:40 - Door unlocked with
+master key
+21:17 - Door unlocked for
+\"Husband\""
+
+[node name="Label7" type="Label" parent="."]
+margin_left = 4.0
+margin_top = 114.0
+margin_right = 254.0
+margin_bottom = 211.0
+theme = ExtResource( 1 )
+text = "
+16:15 - Door unlocked from
+inside
+21:03 - Door unlocked for
+\"Husband\""
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 242.0
+margin_right = 256.0
+margin_bottom = 245.0
+color = Color( 0.993389, 0.570312, 1, 1 )
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+margin_top = 406.0
+margin_right = 256.0
+margin_bottom = 409.0
+color = Color( 0.993389, 0.570312, 1, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_top = 215.0
+margin_right = 256.0
+margin_bottom = 218.0
+color = Color( 0.993389, 0.570312, 1, 1 )
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 72.0
+margin_right = 256.0
+margin_bottom = 89.0
+theme = ExtResource( 1 )
+text = "17/10/2022"
+align = 1
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_top = 90.0
+margin_right = 256.0
+margin_bottom = 93.0
+color = Color( 0.993389, 0.570312, 1, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_top = 63.0
+margin_right = 256.0
+margin_bottom = 66.0
+color = Color( 0.993389, 0.570312, 1, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 3.0
+margin_top = 97.0
+margin_right = 236.0
+margin_bottom = 131.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[u]15:30 - Door unlocked for
+\"Doctor\"[/u]"
+text = "15:30 - Door unlocked for
+\"Doctor\""
+scroll_active = false
+script = ExtResource( 3 )
+knowledge_key = "doctor"
